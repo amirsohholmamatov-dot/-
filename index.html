@@ -1,0 +1,79 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amirshoh Portfolio</title>
+
+    <link rel="stylesheet" href="p1.css">
+</head>
+<body>
+
+    <!-- ФОН -->
+    <div class="background"></div>
+
+    <!-- ГЛАВНОЕ МЕНЮ -->
+    <section class="main-screen">
+
+        <h1 class="title">АМІRSHOH</h1>
+        <p class="subtitle">
+            Программист • Разработчик игр • Кибер безопасность
+        </p>
+
+        <div class="cards">
+
+            <!-- ПРОГРАММИРОВАНИЕ -->
+            <div class="card programming" onclick="openPage('programming')">
+                <div class="overlay"></div>
+
+                <div class="content">
+                    <h2>Программирование</h2>
+                    <p>
+                        HTML, CSS, JavaScript, Python, C++, C
+                    </p>
+                </div>
+            </div>
+
+            <!-- СОЗДАНИЕ ИГР -->
+            <div class="card gamedev" onclick="openPage('gamedev')">
+                <div class="overlay"></div>
+
+                <div class="content">
+                    <h2>Создание игр</h2>
+                    <p>
+                        Unreal Engine • Game Design • Blueprint
+                    </p>
+                </div>
+            </div>
+
+            <!-- КИБЕР БЕЗОПАСНОСТЬ -->
+            <div class="card cyber" onclick="openPage('cyber')">
+                <div class="overlay"></div>
+
+                <div class="content">
+                    <h2>Кибер безопасность</h2>
+                    <p>
+                        Безопасность • Сети • Защита систем
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- СТРАНИЦА -->
+    <section class="page hidden" id="page">
+
+        <button class="back-btn" onclick="goBack()">
+            ← Назад
+        </button>
+
+        <div class="page-content" id="pageContent">
+        </div>
+
+    </section>
+
+    <script src="p2.js"></script>
+</body>
+</html>

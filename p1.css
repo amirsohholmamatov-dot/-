@@ -1,0 +1,228 @@
+/* css/style.css */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#050816;
+    color:white;
+    overflow:hidden;
+}
+
+/* ФОН */
+
+.background{
+    position:fixed;
+    width:100%;
+    height:100%;
+    background:
+    radial-gradient(circle at top left,#00f0ff22,transparent 30%),
+    radial-gradient(circle at bottom right,#ff004422,transparent 30%),
+    linear-gradient(120deg,#050816,#0a0f25);
+    z-index:-1;
+}
+
+/* ГЛАВНАЯ СТРАНИЦА */
+
+.main-screen{
+    width:100%;
+    height:100vh;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    padding:30px;
+}
+
+.title{
+    font-size:70px;
+    margin-bottom:10px;
+
+    letter-spacing:10px;
+    text-shadow:0 0 20px cyan;
+}
+
+.subtitle{
+    margin-bottom:50px;
+    color:#bdbdbd;
+    font-size:18px;
+}
+
+/* КАРТОЧКИ */
+
+.cards{
+    width:100%;
+    max-width:1400px;
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.card{
+    position:relative;
+    height:500px;
+
+    border-radius:25px;
+    overflow:hidden;
+
+    cursor:pointer;
+
+    transition:0.4s;
+    border:1px solid rgba(255,255,255,0.1);
+
+    display:flex;
+    align-items:flex-end;
+}
+
+.card:hover{
+    transform:translateY(-10px) scale(1.02);
+    box-shadow:0 0 30px rgba(0,255,255,0.3);
+}
+
+/* КАРТИНКИ */
+
+.programming{
+    background:
+    url("https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1200&auto=format&fit=crop")
+    center/cover;
+}
+
+.gamedev{
+    background:
+    url("https://images.unsplash.com/photo-1542751110-97427bbecf20?q=80&w=1200&auto=format&fit=crop")
+    center/cover;
+}
+
+.cyber{
+    background:
+    url("https://images.unsplash.com/photo-1510511459019-5dda7724fd87?q=80&w=1200&auto=format&fit=crop")
+    center/cover;
+}
+
+.overlay{
+    position:absolute;
+    inset:0;
+
+    background:
+    linear-gradient(to top,
+    rgba(0,0,0,0.95),
+    rgba(0,0,0,0.1));
+}
+
+.content{
+    position:relative;
+    z-index:2;
+    padding:35px;
+}
+
+.content h2{
+    font-size:35px;
+    margin-bottom:15px;
+}
+
+.content p{
+    color:#d0d0d0;
+    line-height:1.6;
+}
+
+/* СТРАНИЦЫ */
+
+.page{
+    position:absolute;
+    inset:0;
+
+    background:#050816;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    flex-direction:column;
+
+    padding:40px;
+
+    animation:show 0.5s;
+}
+
+.hidden{
+    display:none;
+}
+
+.page-content{
+    max-width:900px;
+    text-align:center;
+}
+
+.page-content h1{
+    font-size:60px;
+    margin-bottom:25px;
+}
+
+.page-content p{
+    font-size:20px;
+    line-height:1.8;
+    color:#d0d0d0;
+}
+
+.back-btn{
+    position:absolute;
+    top:30px;
+    left:30px;
+
+    padding:12px 25px;
+
+    border:none;
+    border-radius:12px;
+
+    background:cyan;
+    color:black;
+
+    font-size:18px;
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:0.3s;
+}
+
+.back-btn:hover{
+    transform:scale(1.05);
+}
+
+/* АНИМАЦИЯ */
+
+@keyframes show{
+    from{
+        opacity:0;
+        transform:scale(1.05);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+/* АДАПТИВ */
+
+@media(max-width:1000px){
+
+    .cards{
+        grid-template-columns:1fr;
+    }
+
+    .card{
+        height:220px;
+    }
+
+    .title{
+        font-size:45px;
+    }
+}
